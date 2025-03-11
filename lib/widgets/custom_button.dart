@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
     );
   }
 
-  /// ✅ Centralized Button Style
+  ///  Centralized Button Style
   ButtonStyle _buttonStyle(BuildContext context) {
     return ElevatedButton.styleFrom(
       backgroundColor: isPrimary ? Theme.of(context).colorScheme.primary : Colors.white,

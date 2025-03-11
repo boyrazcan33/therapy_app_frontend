@@ -33,11 +33,11 @@ class Appointment {
       'userId': userId,
       'therapistId': therapistId,
       'dateTime': dateTime.toIso8601String(),
-      'status': status.name, // ✅ Store as string for easy readability
+      'status': status.name,
     };
   }
 
-  /// ✅ Private helper function to parse `status` safely
+
   static AppointmentStatus _parseStatus(String? status) {
     switch (status?.toLowerCase()) {
       case 'confirmed':
@@ -47,7 +47,7 @@ class Appointment {
       case 'canceled':
         return AppointmentStatus.Canceled;
       default:
-        return AppointmentStatus.Pending; // ✅ Default to Pending if unknown
+        return AppointmentStatus.Pending;
     }
   }
 }

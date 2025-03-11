@@ -13,7 +13,7 @@ class MotivationScreen extends StatelessWidget {
     "Your feelings are valid, and so are you.",
   ];
 
-  /// ✅ Get a random quote
+  ///  Get a random quote
   String getRandomQuote() {
     final random = Random();
     return quotes[random.nextInt(quotes.length)];

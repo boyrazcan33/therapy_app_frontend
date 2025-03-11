@@ -13,7 +13,7 @@ class AppointmentCard extends StatelessWidget {
     required this.onCancel,
   }) : super(key: key);
 
-  ///  Format date and time using `intl` package
+  /// ✅ Format date and time using `intl` package
   String get formattedDate => DateFormat.yMMMd().format(appointmentDate);
   String get formattedTime => DateFormat.jm().format(appointmentDate); // 12-hour format
 

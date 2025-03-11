@@ -28,7 +28,7 @@ class HowToUsePage extends StatelessWidget {
     );
   }
 
-  /// ✅ Step Card UI
+  ///  Step Card UI
   Widget _buildStepCard(BuildContext context, String title, String description) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

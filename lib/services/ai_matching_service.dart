@@ -36,12 +36,12 @@ class Therapist {
     );
   }
 
-  // ✅ Convert Therapist Object to JSON
+  //  Convert Therapist Object to JSON
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'name': name,
-      'specialization': specializations, // ✅ Matches mock data
+      'specialization': specializations,
       'experience': experience,
       'rating': rating,
       'languages': languages,

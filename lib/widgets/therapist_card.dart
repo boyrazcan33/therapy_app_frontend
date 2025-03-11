@@ -40,7 +40,7 @@ class TherapistCard extends StatelessWidget {
           icon: const Icon(Icons.arrow_forward, color: Colors.teal),
           onPressed: onPressed,
         ),
-        onTap: onPressed, // ✅ Makes the whole card tappable
+        onTap: onPressed,
       ),
     );
   }

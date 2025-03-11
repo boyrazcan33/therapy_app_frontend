@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 
 class AppLocalizations {
   final Locale locale;
-  static final Map<String, String> _localizedStrings = {}; // ✅ Singleton cache for efficiency
+  static final Map<String, String> _localizedStrings = {}; //  Singleton cache for efficiency
 
   AppLocalizations(this.locale);
 
-  /// ✅ Retrieve the localization instance
+  ///  Retrieve the localization instance
   static AppLocalizations? of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  /// ✅ Load the localization JSON file once and store in memory
+  /// Load the localization JSON file once and store in memory
   Future<void> load() async {
-    if (_localizedStrings.isNotEmpty) return; // ✅ Prevent multiple loads
+    if (_localizedStrings.isNotEmpty) return; //  Prevent multiple loads
 
     try {
       String jsonString = await rootBundle.loadString('assets/localization/${locale.languageCode}.json');
@@ -26,9 +26,9 @@ class AppLocalizations {
     }
   }
 
-  /// ✅ Retrieve a translated string, fallback to key if missing
+  /// Retrieve a translated string, fallback to key if missing
   String translate(String key) {
-    return _localizedStrings[key] ?? key; // ✅ Always return a fallback
+    return _localizedStrings[key] ?? key; //  Always return a fallback
   }
 }
 
@@ -46,5 +46,5 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   }
 
   @override
-  bool shouldReload(LocalizationsDelegate<AppLocalizations> old) => false; // ✅ No need to reload dynamically
+  bool shouldReload(LocalizationsDelegate<AppLocalizations> old) => false; //  No need to reload dynamically
 }

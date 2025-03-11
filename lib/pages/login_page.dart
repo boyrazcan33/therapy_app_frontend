@@ -15,7 +15,7 @@ class _LogInPageState extends State<LogInPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  /// ✅ Simulated login function
+  /// w Simulated login function
   void _handleLogin() {
     if (_formKey.currentState!.validate()) {
       Navigator.pushNamed(context, Routes.matchWithTherapist);

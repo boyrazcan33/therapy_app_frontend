@@ -7,7 +7,7 @@ import 'themes/app_theme.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  //  Enable debug profiling ONLY in debug mode
+  // ✅ Enable debug profiling ONLY in debug mode
   assert(() {
     debugProfileBuildsEnabled = true;
     return true;
@@ -16,7 +16,7 @@ void main() {
   runApp(const OnnJoyApp());
 }
 
-///  Centralized App Configuration
+/// ✅ Centralized App Configuration
 class AppConfig {
   static const String appTitle = 'OnnJoy';
   static const Locale defaultLocale = Locale('en', '');
@@ -36,7 +36,7 @@ class AppConfig {
   ];
 }
 
-/// Main App Widget
+/// ✅ Main App Widget
 class OnnJoyApp extends StatelessWidget {
   const OnnJoyApp({Key? key}) : super(key: key);
 
@@ -46,7 +46,7 @@ class OnnJoyApp extends StatelessWidget {
       title: AppConfig.appTitle,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system, //  Supports system-wide theme settings
+      themeMode: ThemeMode.system, // ✅ Supports system-wide theme settings
       supportedLocales: AppConfig.supportedLocales,
       localizationsDelegates: AppConfig.localizationsDelegates,
       localeResolutionCallback: (locale, supportedLocales) {
@@ -57,7 +57,7 @@ class OnnJoyApp extends StatelessWidget {
       },
       initialRoute: Routes.welcome,
       routes: appRoutes,
-      onGenerateRoute: generateRoute, //  Handles dynamic routes with parameters
+      onGenerateRoute: generateRoute, // ✅ Handles dynamic routes with parameters
     );
   }
 }

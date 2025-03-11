@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // ✅ Primary Colors
+  //  Primary Colors
   static const Color primaryColor = Color(0xFF005C65); // Teal
   static const Color secondaryColor = Color(0xFF94A3B8); // Muted Blue-Grey
   static const Color accentColor = Color(0xFF00A8B0); // Cyan
@@ -11,10 +11,10 @@ class AppTheme {
   static const Color textPrimaryDark = Color(0xFFF1F6F7);
   static const Color errorColor = Color(0xFFEF4444); // Red for errors
 
-  // ✅ Font Family
+  // Font Family
   static const String fontFamily = "WorkSans";
 
-  /// ✅ Light Theme
+  /// Light Theme
   static ThemeData lightTheme = ThemeData(
     primaryColor: primaryColor,
     scaffoldBackgroundColor: backgroundLight,
@@ -28,7 +28,7 @@ class AppTheme {
     inputDecorationTheme: _inputDecorationTheme,
   );
 
-  /// ✅ Dark Theme
+  /// Dark Theme
   static ThemeData darkTheme = ThemeData(
     primaryColor: primaryColor,
     scaffoldBackgroundColor: backgroundDark,
@@ -42,7 +42,7 @@ class AppTheme {
     inputDecorationTheme: _inputDecorationTheme,
   );
 
-  /// ✅ Centralized Color Schemes
+  ///  Centralized Color Schemes
   static const ColorScheme _lightColorScheme = ColorScheme.light(
     primary: primaryColor,
     secondary: secondaryColor,
@@ -55,7 +55,7 @@ class AppTheme {
     error: errorColor,
   );
 
-  /// ✅ Text Themes
+  ///  Text Themes
   static const TextTheme _textThemeLight = TextTheme(
     displayLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: textPrimaryLight),
     titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: textPrimaryLight),
@@ -72,7 +72,7 @@ class AppTheme {
     labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
   );
 
-  /// ✅ AppBar Themes
+  /// AppBar Themes
   static const AppBarTheme _appBarThemeLight = AppBarTheme(
     backgroundColor: primaryColor,
     titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
@@ -85,7 +85,7 @@ class AppTheme {
     iconTheme: IconThemeData(color: Colors.white),
   );
 
-  /// ✅ Bottom Navigation Bar Themes
+  ///  Bottom Navigation Bar Themes
   static const BottomNavigationBarThemeData _bottomNavBarThemeLight = BottomNavigationBarThemeData(
     backgroundColor: Colors.white,
     selectedItemColor: primaryColor,
@@ -98,7 +98,7 @@ class AppTheme {
     unselectedItemColor: secondaryColor,
   );
 
-  /// ✅ Button Themes (Elevated & Outlined)
+  /// Button Themes (Elevated & Outlined)
   static final ElevatedButtonThemeData _elevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: primaryColor,
@@ -117,7 +117,7 @@ class AppTheme {
     ),
   );
 
-  /// ✅ Input Field Theme
+  ///  Input Field Theme
   static final InputDecorationTheme _inputDecorationTheme = InputDecorationTheme(
     border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: const BorderSide(color: secondaryColor)),
     enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: const BorderSide(color: secondaryColor)),

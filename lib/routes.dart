@@ -10,9 +10,9 @@ import 'pages/match_with_therapist_page.dart';
 import 'pages/matching_questionnaire_page.dart';
 import 'pages/motivation_screen.dart';
 import 'pages/payment_options_page.dart';
-import '../data/mock_data.dart'; // ✅ Ensure mock data is accessible
+import '../data/mock_data.dart';
 
-/// ✅ Centralized Route Names
+///  Centralized Route Names
 class Routes {
   static const String welcome = '/';
   static const String login = '/login';
@@ -27,7 +27,7 @@ class Routes {
   static const String paymentOptions = '/payment_options';
 }
 
-/// ✅ Static Routes (For pages that don't require arguments)
+///  Static Routes (For pages that don't require arguments)
 final Map<String, WidgetBuilder> appRoutes = {
   Routes.welcome: (context) => const WelcomePage(),
   Routes.login: (context) => const LogInPage(),
@@ -38,11 +38,11 @@ final Map<String, WidgetBuilder> appRoutes = {
   Routes.paymentOptions: (context) => const PaymentOptionsPage(),
 };
 
-/// ✅ Dynamic Routes (For pages that need arguments)
+///  Dynamic Routes (For pages that need arguments)
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
 
-  // ✅ Therapist Profile Page (Fixes missing arguments)
+  //  Therapist Profile Page (Fixes missing arguments)
     case Routes.therapistProfile:
       final therapistData = settings.arguments as Map<String, dynamic>? ?? mockTherapists[0];
       return MaterialPageRoute(
@@ -57,7 +57,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         ),
       );
 
-  // ✅ Set Appointment Page (Fixes missing arguments)
+  //  Set Appointment Page (Fixes missing arguments)
     case Routes.setAppointment:
       final appointmentData = settings.arguments as Map<String, dynamic>? ?? {};
       return MaterialPageRoute(
@@ -67,7 +67,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         ),
       );
 
-  // ✅ Match With Therapist Page (Fixes missing arguments)
+  // Match With Therapist Page (Fixes missing arguments)
     case Routes.matchWithTherapist:
       final matchData = settings.arguments as Map<String, dynamic>? ?? {};
       return MaterialPageRoute(
@@ -80,7 +80,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         ),
       );
 
-  // ✅ Booking Confirmation Page (Fixes missing arguments)
+  //  Booking Confirmation Page (Fixes missing arguments)
     case Routes.bookingConfirmation:
       final bookingData = settings.arguments as Map<String, dynamic>? ?? {};
       return MaterialPageRoute(

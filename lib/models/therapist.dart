@@ -32,7 +32,7 @@ class Therapist {
     required this.profileImage,
   });
 
-  /// ✅ Convert JSON to Therapist Object (Handles missing fields safely)
+  ///  Convert JSON to Therapist Object (Handles missing fields safely)
   factory Therapist.fromJson(Map<String, dynamic> json) {
     return Therapist(
       id: json['id'] ?? '',
@@ -50,12 +50,12 @@ class Therapist {
     );
   }
 
-  /// ✅ Convert Therapist Object to JSON
+  ///  Convert Therapist Object to JSON
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'name': name,
-      'specialization': specializations.map((s) => s.name).toList(), // ✅ Store enum as string
+      'specialization': specializations.map((s) => s.name).toList(),
       'experience': experience,
       'rating': rating,
       'languages': languages,
@@ -65,7 +65,7 @@ class Therapist {
     };
   }
 
-  /// ✅ Private helper function to parse `specialization` safely
+  ///  Private helper function to parse `specialization` safely
   static Specialization _parseSpecialization(String spec) {
     switch (spec.toLowerCase()) {
       case 'anxiety':

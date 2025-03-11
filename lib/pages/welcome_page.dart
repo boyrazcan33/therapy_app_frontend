@@ -24,7 +24,7 @@ class WelcomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  "Welcome to OnnJoy",
+                  " to OnnJoy",
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.primary,

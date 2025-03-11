@@ -49,7 +49,7 @@ class BookingConfirmationPage extends StatelessWidget {
     );
   }
 
-  /// ✅ Helper method to format month name
+  ///  Helper method to format month name
   String _monthName(int month) {
     const months = [
       "January", "February", "March", "April", "May", "June",

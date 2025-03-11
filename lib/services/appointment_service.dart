@@ -27,11 +27,11 @@ class AppointmentService {
       throw Exception("Error: Appointment already exists for this time slot.");
     }
 
-    mockAppointments.add(newAppointment.toJson()); // ✅ Convert to JSON before adding
+    mockAppointments.add(newAppointment.toJson());
     return true;
   }
 
-  /// ✅ Cancel an appointment safely (Returns `true` if successful)
+  ///  Cancel an appointment safely (Returns `true` if successful)
   bool cancelAppointment(String appointmentId) {
     final index = mockAppointments.indexWhere((appt) => appt['id'] == appointmentId);
 

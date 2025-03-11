@@ -1,7 +1,7 @@
 class Therapist {
   final String id;
   final String name;
-  final List<String> specializations;
+  final List<String> specializations; // ✅ Corrected field name
   final int experience;
   final double rating;
   final List<String> languages;
@@ -12,7 +12,7 @@ class Therapist {
   Therapist({
     required this.id,
     required this.name,
-    required this.specializations,
+    required this.specializations, // ✅ Fixed (was missing)
     required this.experience,
     required this.rating,
     required this.languages,
@@ -21,12 +21,12 @@ class Therapist {
     required this.profileImage,
   });
 
-
+  // ✅ Convert JSON to Therapist Object
   factory Therapist.fromJson(Map<String, dynamic> json) {
     return Therapist(
       id: json['id'],
       name: json['name'],
-      specializations: List<String>.from(json['specialization'] ?? []),
+      specializations: List<String>.from(json['specialization'] ?? []), // ✅ Fixed field name
       experience: json['experience'],
       rating: (json['rating'] as num).toDouble(),
       languages: List<String>.from(json['languages'] ?? []),
@@ -36,12 +36,12 @@ class Therapist {
     );
   }
 
-
+  // ✅ Convert Therapist Object to JSON
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'name': name,
-      'specialization': specializations,
+      'specialization': specializations, // ✅ Fixed field name
       'experience': experience,
       'rating': rating,
       'languages': languages,

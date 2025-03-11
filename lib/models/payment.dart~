@@ -20,33 +20,33 @@ class Payment {
     required this.paymentMethod,
   });
 
-  ///  Convert JSON to Payment Object (Handles missing fields safely)
+  /// ✅ Convert JSON to Payment Object (Handles missing fields safely)
   factory Payment.fromJson(Map<String, dynamic> json) {
     return Payment(
       id: json['id'] ?? '',
       userId: json['userId'] ?? '',
-      amount: (json['amount'] as num?)?.toDouble() ?? 0.0, //  Ensures double type
-      currency: json['currency'] ?? 'USD', //  Default currency if missing
+      amount: (json['amount'] as num?)?.toDouble() ?? 0.0, // ✅ Ensures double type
+      currency: json['currency'] ?? 'USD', // ✅ Default currency if missing
       status: _parseStatus(json['status']),
       transactionDate: DateTime.tryParse(json['transactionDate'] ?? '') ?? DateTime.now(),
       paymentMethod: _parsePaymentMethod(json['paymentMethod']),
     );
   }
 
-  ///  Convert Payment Object to JSON (Stores enums as strings)
+  /// ✅ Convert Payment Object to JSON (Stores enums as strings)
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'userId': userId,
       'amount': amount,
       'currency': currency,
-      'status': status.name,
+      'status': status.name, // ✅ Store as readable string
       'transactionDate': transactionDate.toIso8601String(),
-      'paymentMethod': paymentMethod.name,
+      'paymentMethod': paymentMethod.name, // ✅ Store as readable string
     };
   }
 
-  ///  Private helper function to parse `status` safely
+  /// ✅ Private helper function to parse `status` safely
   static PaymentStatus _parseStatus(String? status) {
     switch (status?.toLowerCase()) {
       case 'completed':
@@ -56,11 +56,11 @@ class Payment {
       case 'failed':
         return PaymentStatus.Failed;
       default:
-        return PaymentStatus.Pending;
+        return PaymentStatus.Pending; // ✅ Default to Pending
     }
   }
 
-  /// Private helper function to parse `paymentMethod` safely
+  /// ✅ Private helper function to parse `paymentMethod` safely
   static PaymentMethod _parsePaymentMethod(String? method) {
     switch (method?.toLowerCase()) {
       case 'creditcard':
@@ -70,7 +70,7 @@ class Payment {
       case 'banktransfer':
         return PaymentMethod.BankTransfer;
       default:
-        return PaymentMethod.Other;
+        return PaymentMethod.Other; // ✅ Default to Other if unknown
     }
   }
 }

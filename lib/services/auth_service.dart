@@ -5,10 +5,10 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
-  /// ✅ Get current authenticated user
+  ///  Get current authenticated user
   User? get currentUser => _auth.currentUser;
 
-  /// ✅ Anonymous Sign-Up (Auto-generated username handled separately)
+  ///  Anonymous Sign-Up (Auto-generated username handled separately)
   Future<User?> signUpAnonymously() async {
     try {
       return (await _auth.signInAnonymously()).user;
@@ -21,7 +21,7 @@ class AuthService {
     }
   }
 
-  /// ✅ Sign-Up with Email & Password
+  ///  Sign-Up with Email & Password
   Future<User?> signUpWithEmail(String email, String password) async {
     if (email.trim().isEmpty || password.trim().isEmpty) {
       print("Error: Email and password cannot be empty.");
@@ -42,7 +42,7 @@ class AuthService {
     }
   }
 
-  /// ✅ Sign-In with Email & Password
+  ///  Sign-In with Email & Password
   Future<User?> signInWithEmail(String email, String password) async {
     if (email.trim().isEmpty || password.trim().isEmpty) {
       print("Error: Email and password cannot be empty.");
@@ -63,7 +63,7 @@ class AuthService {
     }
   }
 
-  /// ✅ Google Sign-in (Handles Account Linking)
+  ///  Google Sign-in (Handles Account Linking)
   Future<User?> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
@@ -88,7 +88,7 @@ class AuthService {
     }
   }
 
-  /// ✅ Reset Password (With User Notification)
+  ///  Reset Password (With User Notification)
   Future<void> resetPassword(String email) async {
     if (email.trim().isEmpty) {
       print("Error: Email cannot be empty.");
@@ -104,10 +104,10 @@ class AuthService {
     }
   }
 
-  /// ✅ Logout (Ensures Sign-Out from All Sessions)
+  ///  Logout (Ensures Sign-Out from All Sessions)
   Future<void> logout() async {
     try {
-      await _googleSignIn.signOut(); // ✅ Ensure Google logout first
+      await _googleSignIn.signOut(); //  Ensure Google logout first
       await _auth.signOut();
       print('✅ User logged out successfully.');
     } catch (e) {

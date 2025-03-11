@@ -16,7 +16,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _passwordController = TextEditingController();
   final AuthService _authService = AuthService();
 
-  ///  Handles Sign Up Logic
+  /// ✅ Handles Sign Up Logic
   void _handleSignUp() async {
     if (_formKey.currentState!.validate()) {
       final user = await _authService.signUpWithEmail(
@@ -37,7 +37,7 @@ class _SignUpPageState extends State<SignUpPage> {
     }
   }
 
-  ///  Handles Anonymous Sign Up
+  /// ✅ Handles Anonymous Sign Up
   void _handleAnonymousSignUp() async {
     final user = await _authService.signUpAnonymously();
     if (user != null) {

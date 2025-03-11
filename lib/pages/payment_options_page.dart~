@@ -19,7 +19,7 @@ class _PaymentOptionsPageState extends State<PaymentOptionsPage> {
     {"name": "PayPal", "icon": Icons.payment},
   ];
 
-  ///  Confirm Payment Before Proceeding
+  /// ✅ Confirm Payment Before Proceeding
   void _confirmPayment() {
     if (selectedPaymentMethod == null) {
       ScaffoldMessenger.of(context).showSnackBar(
