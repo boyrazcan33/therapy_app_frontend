@@ -15,7 +15,7 @@ class Appointment {
     required this.status,
   });
 
-  /// ✅ Convert JSON to Appointment Object (Handles missing fields safely)
+  ///  Convert JSON to Appointment Object (Handles missing fields safely)
   factory Appointment.fromJson(Map<String, dynamic> json) {
     return Appointment(
       id: json['id'] ?? '',

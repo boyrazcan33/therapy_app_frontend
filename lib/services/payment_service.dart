@@ -4,7 +4,7 @@ import '../data/mock_data.dart';
 class PaymentService {
   ///  Convert `mockPayments` to a list of `Payment` objects
   List<Payment> _getPayments() {
-    return mockPayments.map((data) => Payment.fromJson(data)).toList(); // ✅ Fixed conversion
+    return mockPayments.map((data) => Payment.fromJson(data)).toList(); //  Fixed conversion
   }
 
   /// Process a new payment securely (Returns `true` if successful)
