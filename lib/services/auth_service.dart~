@@ -1,0 +1,114 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+class AuthService {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
+  // Get current user
+  User? get currentUser => _auth.currentUser;
+
+  // Anonymous Sign-up (Auto-generated username)
+  Future<User?> signUpAnonymously() async {
+    try {
+      UserCredential result = await _auth.signInAnonymously();
+      return result.user;
+    } catch (e) {
+      print('Error signing up anonymously: ${e.toString()}');
+      return null;
+    }
+  }
+
+  // Sign-up with Email & Password
+  Future<User?> signUpWithEmail(String email, String password) async {
+    try {
+      if (email.isEmpty || password.isEmpty) {
+        print("Error: Email and password cannot be empty.");
+        return null;
+      }
+      UserCredential result = await _auth.createUserWithEmailAndPassword(
+          email: email.trim(), password: password.trim());
+      return result.user;
+    } on FirebaseAuthException catch (e) {
+      print('Firebase Auth Error: ${e.message}');
+      return null;
+    } catch (e) {
+      print('Error signing up: ${e.toString()}');
+      return null;
+    }
+  }
+
+  // Sign-in with Email & Password
+  Future<User?> signInWithEmail(String email, String password) async {
+    try {
+      if (email.isEmpty || password.isEmpty) {
+        print("Error: Email and password cannot be empty.");
+        return null;
+      }
+      UserCredential result = await _auth.signInWithEmailAndPassword(
+          email: email.trim(), password: password.trim());
+      return result.user;
+    } on FirebaseAuthException catch (e) {
+      print('Firebase Auth Error: ${e.message}');
+      return null;
+    } catch (e) {
+      print('Error signing in: ${e.toString()}');
+      return null;
+    }
+  }
+
+  // Google Sign-in
+  Future<User?> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) {
+        print('Google sign-in cancelled.');
+        return null;
+      }
+
+      final GoogleSignInAuthentication googleAuth =
+      await googleUser.authentication;
+
+      final OAuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      UserCredential result = await _auth.signInWithCredential(credential);
+      return result.user;
+    } on FirebaseAuthException catch (e) {
+      print('Firebase Auth Error: ${e.message}');
+      return null;
+    } catch (e) {
+      print('Error signing in with Google: ${e.toString()}');
+      return null;
+    }
+  }
+
+  // Password Reset
+  Future<void> resetPassword(String email) async {
+    try {
+      if (email.isEmpty) {
+        print("Error: Email cannot be empty.");
+        return;
+      }
+      await _auth.sendPasswordResetEmail(email: email.trim());
+      print('Password reset email sent.');
+    } on FirebaseAuthException catch (e) {
+      print('Firebase Auth Error: ${e.message}');
+    } catch (e) {
+      print('Error resetting password: ${e.toString()}');
+    }
+  }
+
+  // Logout
+  Future<void> logout() async {
+    try {
+      await _auth.signOut();
+      await _googleSignIn.signOut();
+      print('User logged out successfully.');
+    } catch (e) {
+      print('Error logging out: ${e.toString()}');
+    }
+  }
+}

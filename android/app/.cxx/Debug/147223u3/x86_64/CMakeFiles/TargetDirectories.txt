@@ -1,0 +1,2 @@
+C:/ONNJOY/android/app/.cxx/Debug/147223u3/x86_64/CMakeFiles/edit_cache.dir
+C:/ONNJOY/android/app/.cxx/Debug/147223u3/x86_64/CMakeFiles/rebuild_cache.dir
