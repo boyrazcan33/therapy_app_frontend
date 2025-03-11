@@ -26,7 +26,7 @@ class Appointment {
     );
   }
 
-  /// ✅ Convert Appointment Object to JSON (Ensures status is stored as a string)
+  ///  Convert Appointment Object to JSON (Ensures status is stored as a string)
   Map<String, dynamic> toJson() {
     return {
       'id': id,
