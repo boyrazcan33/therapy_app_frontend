@@ -1,4 +1,2 @@
-# onn_joy`s beta
-
-It is the beta version to build completed app and to understand my mistakes
-
+# onn_joy
+OnnJoy is an AI-powered therapy matchmaking platform that connects clients with licensed psychologists through secure video sessions.
