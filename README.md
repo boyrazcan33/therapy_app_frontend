@@ -1,4 +1,4 @@
 # onn_joy`s beta
 
-It is the beta version to build ompleted app and to understand my mistakes
+It is the beta version to build completed app and to understand my mistakes
 
