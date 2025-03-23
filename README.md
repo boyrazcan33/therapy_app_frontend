@@ -1,4 +1,4 @@
-# onn_joy`s dummy
+# onn_joy`s beta
 
-It is the dummy version to buil real app and to understand my mistakes
+It is the beta version to buil real app and to understand my mistakes
 
